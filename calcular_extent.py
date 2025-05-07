@@ -29,5 +29,5 @@ for i in list(campos):
         for coord in cursor:
             print(i , "--> " , coord[0])
  
-
+#A futuro añadir edición automática de metadata
 
