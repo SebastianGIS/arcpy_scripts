@@ -24,15 +24,14 @@ for cardinal , extension in campos.items():
     arcpy.management.CalculateGeometryAttributes(fc_mbg , [[cardinal , extension]] , coordinate_format= "DD")
 
 #Imprimir coordenada por cada punto cardinal
-valores_extent = {}
 for i in list(campos):
     with arcpy.da.SearchCursor(fc_mbg , i) as cursor:
         for coord in cursor:
             print(i , "--> " , coord[0])
-            valores_extent[i] = coord[0]
             
 #Eliminar el mbg residual
 arcpy.Delete_management(fc_mbg)
+
 
 
 
